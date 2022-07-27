@@ -44,7 +44,7 @@ internal static class LocalizationUtility
 
         var (fallbackRemote, fallbackBranch) = fallbackRepository?.Type == PackageType.Git
             ? (fallbackRepository?.Url, fallbackRepository?.Branch)
-            : GetFallbackRepository(repository!.Url, repository.Branch);
+            : (repository!.Url, repository.Branch);
         if (fallbackRemote != null)
         {
             var docsetSourceFolder = Path.GetRelativePath(repository.Path, docsetPath);
